@@ -80,7 +80,7 @@ export default function Hero() {
         }}>
            {/* Using placeholder. Update with actual image path inside public/ or src/assets/ */}
           <img 
-            src="/taabish.png" 
+            src="/taabish.jpeg" 
             alt="Mohammed Taabish" 
             style={{
               width: '100%',
