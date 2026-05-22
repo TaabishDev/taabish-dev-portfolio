@@ -3,97 +3,149 @@ import { personalInfo } from '../constants';
 
 export default function Hero() {
   return (
-    <section id="home" className="section-container" style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      minHeight: '100vh',
-      gap: '40px'
-    }}>
-      <div style={{ flex: 1 }}>
+    <section
+      id="home"
+      className="section-container"
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
+        position: 'relative',
+        overflow: 'hidden',
+        padding: '0 20px'
+      }}
+    >
+      {/* Animated Background Image */}
+      <motion.img
+        src="/profile.png"
+        alt="background"
+        initial={{ scale: 1.1, opacity: 0.12 }}
+        animate={{
+          scale: [1.1, 1.15, 1.1],
+          y: [0, -1, 0],
+          rotate: [0, 1, -1, 0]
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: 'easeInOut'
+        }}
+        style={{
+          position: 'absolute',
+          width: '700px',
+          maxWidth: '90%',
+          opacity: 0.12,
+          zIndex: 0,
+          filter: 'blur(1px)',
+          pointerEvents: 'none'
+        }}
+      />
+
+      {/* Main Content */}
+      <div
+        style={{
+          maxWidth: '1000px',
+          width: '100%',
+          position: 'relative',
+          zIndex: 2
+        }}
+      >
+        {/* Intro */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          style={{ fontSize: '1.2rem', color: 'var(--accent-blue)', marginBottom: '10px' }}
+          style={{
+            fontSize: '1.5rem',
+            color: 'var(--accent-blue)',
+            marginBottom: '20px'
+          }}
           className="heading-font"
         >
           Hi, I'm
         </motion.p>
+
+        {/* Name */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          style={{ marginBottom: '20px' }}
+          style={{ marginBottom: '25px' }}
         >
           <h1
             style={{
-              fontSize: '4.5rem',
+              fontSize: '5.5rem',
               lineHeight: 1.1,
-              color: 'white',
-              cursor: 'default',
-              margin: 0
+              margin: 0,
+              cursor: 'default'
             }}
             className="heading-font text-gradient glow-text"
           >
             {personalInfo.name}
           </h1>
         </motion.div>
+
+        {/* Role */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          style={{ fontSize: '2rem', color: 'var(--text-muted)', marginBottom: '30px' }}
+          style={{
+            fontSize: '2rem',
+            color: 'var(--text-muted)',
+            marginBottom: '50px',
+            lineHeight: '1.5'
+          }}
         >
           {personalInfo.role}
         </motion.h2>
+
+        {/* Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          style={{ display: 'flex', gap: '20px' }}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '25px',
+            flexWrap: 'wrap'
+          }}
         >
-          <a href="#projects" className="neon-btn" style={{ padding: '15px 30px', fontSize: '1.1rem', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-            Explore Work
+          <a
+            href="#projects"
+            className="neon-btn"
+            style={{
+              padding: '15px 35px',
+              fontSize: '1.1rem',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            🚀 Explore Work
           </a>
-          <a href="#contact" className="neon-btn-secondary" style={{ padding: '15px 30px', fontSize: '1.1rem', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-            Contact Me
+
+          <a
+            href="#contact"
+            className="neon-btn-secondary"
+            style={{
+              padding: '15px 35px',
+              fontSize: '1.1rem',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            📩 Contact Me
           </a>
         </motion.div>
       </div>
-      
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="animate-float"
-        style={{ flex: 1, display: 'flex', justifyContent: 'center' }}
-      >
-        <div className="profile-img-container" style={{
-          width: '400px',
-          height: '400px',
-          borderRadius: '50%',
-          padding: '10px',
-          background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-purple))',
-          boxShadow: 'var(--neon-shadow)',
-          position: 'relative'
-        }}>
-           {/* Using placeholder. Update with actual image path inside public/ or src/assets/ */}
-          <img 
-            src="/taabish.jpeg" 
-            alt="Mohammed Taabish" 
-            style={{
-              width: '100%',
-              height: '100%',
-              borderRadius: '50%',
-              objectFit: 'cover',
-              border: '5px solid var(--bg-color)'
-            }}
-          />
-        </div>
-      </motion.div>
-      
-      <motion.div 
+
+      {/* Scroll Indicator */}
+      <motion.div
         animate={{
           y: [0, 24, 0],
         }}
@@ -102,10 +154,10 @@ export default function Hero() {
           repeat: Infinity,
           repeatType: "loop",
         }}
-        style={{ 
-          position: 'absolute', 
-          bottom: '40px', 
-          left: '50%', 
+        style={{
+          position: 'absolute',
+          bottom: '40px',
+          left: '50%',
           transform: 'translateX(-50%)',
           width: '30px',
           height: '50px',
@@ -114,10 +166,18 @@ export default function Hero() {
           display: 'flex',
           justifyContent: 'center',
           paddingTop: '10px',
-          opacity: 0.6
+          opacity: 0.6,
+          zIndex: 2
         }}
       >
-        <div style={{ width: '4px', height: '12px', background: 'var(--accent-blue)', borderRadius: '2px' }} />
+        <div
+          style={{
+            width: '4px',
+            height: '12px',
+            background: 'var(--accent-blue)',
+            borderRadius: '2px'
+          }}
+        />
       </motion.div>
     </section>
   );
