@@ -3,7 +3,7 @@ export const personalInfo = {
 
   role: "Blockchain Developer | Frontend Developer | Web3 Developer",
 
-  email: "taabishtaabish123@gmail.com",
+  email: "mohammedtaabisha@gmail.com",
 
   linkedin: "https://www.linkedin.com/in/mohammed-taabish-521308251",
 
