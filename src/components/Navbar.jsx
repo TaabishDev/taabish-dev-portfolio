@@ -29,6 +29,7 @@ export default function Navbar() {
         alignItems: 'center'
       }}
     >
+      {/* LOGO */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
@@ -47,6 +48,7 @@ export default function Navbar() {
         </div>
       </motion.div>
 
+      {/* NAV LINKS */}
       <ul
         style={{
           display: 'flex',
@@ -76,11 +78,18 @@ export default function Navbar() {
         ))}
       </ul>
 
+      {/* BUTTONS */}
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
+        style={{
+          display: 'flex',
+          gap: '12px',
+          alignItems: 'center'
+        }}
       >
+        {/* Resume Button */}
         <a
           href="/resume.pdf"
           target="_blank"
@@ -93,6 +102,36 @@ export default function Navbar() {
           }}
         >
           Resume
+        </a>
+
+        {/* GitHub Button */}
+        <a
+          href="https://github.com/taabishDev"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="neon-btn"
+          style={{
+            padding: '8px 20px',
+            fontSize: '0.9rem',
+            display: 'inline-block'
+          }}
+        >
+          GitHub
+        </a>
+
+        {/* LinkedIn Button */}
+        <a
+          href="https://www.linkedin.com/in/mohammed-taabish01"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="neon-btn"
+          style={{
+            padding: '8px 20px',
+            fontSize: '0.9rem',
+            display: 'inline-block'
+          }}
+        >
+          LinkedIn
         </a>
       </motion.div>
     </nav>

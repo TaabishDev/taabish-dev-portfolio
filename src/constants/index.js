@@ -181,6 +181,22 @@ export const certifications = [
     title: "Python 3.4.3 Certification",
 
     date: "2025"
+  },
+
+  {
+  title: "Hackathon Winner",
+
+  badge: "🏆 WINNER",
+  
+  date: "2026"
+  },
+
+  {
+    title: "Web3 Developer",
+
+    badge: "⛓️ WEB3",
+
+    date: "2026"
   }
 ];
 
